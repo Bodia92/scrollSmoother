@@ -7,14 +7,14 @@
 :root {
 	--full-screen: calc(var(--vh, 1vh) * 100);
 
-	--height-header: 10rem;
-	--height-footer: 10rem;
+	--height-header: 13rem;
+	--height-footer: 8rem;
 	--gl-indent: 3rem;
 }
 
 html {
 	height: 100%;
-	font: 400 calc(100vw / 1920 * 10)/1.33 $font_1;
+	font: 400 calc(100vw / 1920 * 10) / 1.33 $font_1;
 }
 
 body {
@@ -46,7 +46,7 @@ body {
 	background-color: $white;
 
 	opacity: 1;
-	transition: opacity .3s;
+	transition: opacity 0.3s;
 
 	z-index: 1000;
 
@@ -73,6 +73,8 @@ body {
 	position: relative;
 	padding: var(--height-header) 0 0;
 
+	background-color: $gray_3;
+
 	flex: 1 0 auto;
 }
 
@@ -84,7 +86,6 @@ a {
 	&:focus {
 		text-decoration: underline;
 	}
-
 }
 
 //------------------------------------------------------------base styles###

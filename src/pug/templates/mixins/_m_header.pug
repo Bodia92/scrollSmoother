@@ -1,2 +1,17 @@
 mixin header
 	header.header
+		.header_in
+			.header_logo
+				a.header_logo__link(href="./index.html" aria-label="Logo/Back to home")
+					img.header_logo__img(src="images/logo.svg", alt="logo")
+			.header__body
+				nav.header_menu
+					+menu({
+						gl_class: 'header_menu',
+						items: [
+							{title: 'Our philosophy', url: 'philosophy.html'},
+							{title: 'For Partners', url: 'partners.html'},
+							{title: 'Solutions', url: 'solutions.html'},
+							{title: 'Contact', url: 'contact.html'},
+						],
+					})

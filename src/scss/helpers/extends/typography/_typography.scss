@@ -1,6 +1,93 @@
 %h1 {
-	font-size: 4rem;
+	letter-spacing: 0.01em;
 	text-transform: uppercase;
+	font-weight: 800;
+
+	@include bp($point_2, min) {
+		font-size: 6rem;
+		line-height: 0.96;
+	}
+
+	@include bp($point_3, $point_7) {
+		font-size: 4.5rem;
+		line-height: 1.16;
+	}
+
+	@include bp($point_7 - 1) {
+		font-size: 3.8rem;
+		line-height: 1.25;
+	}
+}
+
+%h2 {
+	letter-spacing: 0.01em;
+	font-weight: 900;
+	text-transform: uppercase;
+
+	@include bp($point_2, min) {
+		font-size: 4rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 4rem;
+	}
+}
+
+%h3 {
+	font-weight: 800;
+	letter-spacing: 0.01em;
+
+	@include bp($point_2, min) {
+		font-size: 3.8rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 2.4rem;
+	}
+}
+
+%descr {
+	letter-spacing: 0.008em;
+	font-weight: 300;
+
+	@include bp($point_2, min) {
+		font-size: 2.4rem;
+		line-height: 1.4;
+	}
+
+	@include bp($point_3) {
+		font-size: 2.1rem;
+		line-height: 1.318;
+	}
+}
+
+%text {
+	font-weight: 300;
+	letter-spacing: 0.018rem;
+
+	@include bp($point_2, min) {
+		font-size: 2.3rem;
+		line-height: 1.4;
+	}
+
+	@include bp($point_3) {
+		font-size: 2.1rem;
+		line-height: 1.33;
+	}
+}
+
+%text_strong {
+	font-weight: 800;
+	letter-spacing: 0.03rem;
+
+	@include bp($point_2, min) {
+		font-size: 3rem;
+		line-height: 1.14;
+	}
+	@include bp($point_3) {
+		font-size: 2.4rem;
+		line-height: 1.25;
+	}
 }
 
 // offsets

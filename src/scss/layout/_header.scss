@@ -1,17 +1,170 @@
 //------------------------------------------------------------layout
 .header {
+	@extend %transition_background;
+
 	position: fixed;
 	top: 0;
 	left: 0;
 
 	height: var(--height-header);
 	width: 100%;
+	padding: 2.6rem 3.2rem 2.6rem 3.8rem;
 
 	font-size: 1rem;
-
-	will-change: transform;
+	background-color: $black_2;
 
 	@include z-index(header);
 }
 
 //------------------------------------------------------------layout###
+.header_in {
+	@include flex_block(row, wrap, flex-start, center);
+}
+
+.header_logo {
+	flex: 1 1 auto;
+
+	&:not(:last-child) {
+		margin-right: 2rem;
+	}
+
+	@include bp($point_2, min) {
+		padding-top: 1.3rem;
+	}
+}
+
+.header_logo__link {
+	display: block;
+
+	width: 15.9rem;
+	height: 6.5rem;
+}
+
+.header_logo__img {
+	@extend %contain_img;
+}
+
+.header__body {
+	@extend %transition_transform;
+
+	@include bp($point_3) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 5;
+
+		width: 100%;
+		height: 100%;
+
+		transform: translateX(100%);
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		.body--open_menu_state & {
+			transform: translateX(0);
+		}
+	}
+}
+
+.header__content {
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, center);
+	}
+
+	@include bp($point_3) {
+		position: relative;
+
+		min-height: 100%;
+		width: 100%;
+
+		padding: 2.1rem 2.2rem 3.1rem 9.5rem;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+
+			height: 100%;
+		}
+
+		&::before {
+			left: 0;
+
+			width: 7.3rem;
+
+			opacity: 0.85;
+			background-image: $gradient;
+		}
+
+		&::after {
+			right: 0;
+			z-index: -1;
+
+			width: calc(100% - 7.3rem);
+
+			background-color: $white;
+		}
+
+		@include flex_block(column-reverse, nowrap, flex-end);
+	}
+}
+
+// menu
+.header_menu {
+	@extend %transition_transform;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-right: 5.2rem;
+		}
+	}
+
+	@include bp($point_3) {
+		flex: 1 1 auto;
+		width: 100%;
+
+		padding: 13.5rem 0 0 3.9rem;
+		margin-bottom: 2rem;
+
+		@include flex_block(row, nowrap, center);
+	}
+}
+
+.header_menu__list {
+	@include bp($point_2, min) {
+		margin: 0 -4.6rem -2rem 0;
+
+		@include flex_block(row, wrap, flex-start);
+	}
+}
+
+.header_menu__item {
+	@include bp($point_2, min) {
+		padding: 0 4.6rem 2rem 0;
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 3.4rem;
+		}
+	}
+}
+
+.header_menu__link {
+	@extend %transition_opacity;
+
+	display: block;
+
+	font-weight: 300;
+	font-size: 1.6rem;
+	color: $gray;
+	letter-spacing: 0.031em;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+
+		opacity: 0.8;
+	}
+}

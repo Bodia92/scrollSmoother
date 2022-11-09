@@ -4,6 +4,67 @@
 	flex: 0 0 auto;
 
 	font-size: 1rem;
+	background-color: $black_2;
 
 	will-change: transform;
+
+	@include bp($point_2, min) {
+		padding: 1.5rem 2.5rem;
+	}
+
+	@include bp($point_3) {
+		padding: 3.5rem 6rem 5.1rem;
+	}
+}
+
+.footer_in {
+	width: 100%;
+	max-width: 139rem;
+	margin: 0 auto;
+
+	text-align: center;
+
+	@include bp($point_2, min) {
+		@include flex_block(row, nowrap, center, center);
+	}
+
+	@include bp($point_3) {
+		@include flex_block(column-reverse, nowrap, flex-start, center);
+	}
+}
+
+.footer__item {
+	font-size: 1.6rem;
+	font-weight: 300;
+	letter-spacing: 0.016rem;
+	color: $gray_4;
+
+	@include bp($point_2, min) {
+		line-height: 2.75;
+
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
+
+		&:nth-child(2) {
+			margin-left: auto;
+		}
+	}
+
+	@include bp($point_3) {
+		line-height: 1.44;
+
+		&:first-child {
+			max-width: 24rem;
+			span {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		&:nth-child(2) {
+			margin-bottom: 3.8rem;
+			font-weight: 800;
+		}
+	}
 }

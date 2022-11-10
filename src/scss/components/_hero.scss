@@ -4,8 +4,6 @@
 	height: calc(100vh - var(--height-header));
 	width: 100%;
 
-	padding: 10rem 3rem;
-
 	@include flex_block(row, nowrap, center, center);
 }
 
@@ -24,15 +22,23 @@
 .hero__content {
 	position: relative;
 
-	overflow: hidden;
+	// overflow: hidden;
 }
 
-.hero__title {
+.hero_title {
 	@extend %h1;
+
+	text-align: center;
 
 	&:not(:last-child) {
 		margin-bottom: 3.6rem;
 	}
+}
+
+.hero_title__strong {
+	@extend %h1;
+
+	color: $blue;
 }
 
 .hero__text {
